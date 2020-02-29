@@ -7,10 +7,11 @@ const buildGraveyard = () => {
     domString += '<div class="d-flex flex-wrap">';
     persons.forEach((person) => {
         domString += '<div class="col-4 person-card">'
-        domString +=    '<div class="card text-center">';
+        domString +=    '<div class="card text-center p-3">';
         domString +=        '<div class="card-body">';
         domString +=            `${person.name}`;
         domString +=        '</div>';
+        domString +=        `<button id="${person.id}" class="btn btn-success col-6 offset-3 revive-me m-auto">Revive</button>`;
         domString +=    '</div>';
         domString += '</div>';
     })
