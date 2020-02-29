@@ -1,9 +1,27 @@
-import utilities from '../helpers/ultilities.js';
 import ultilities from '../helpers/ultilities.js';
+import personData from '../helpers/data/personData.js';
 
 const tankBuilder = () => {
-    let domString = '<h1 class="text-center">Help</h1>';
+    const persons = personData.getLivePersons();
+    let domString = '';
+    domString +=    '<div class="card text-center">';
+    domString +=        '<div class="card-header">';
+    domString +=            'Shark Tank';
+    domString +=        '</div>';
+    domString +=        '<ul class="list-group list-group-flush">';
+    persons.forEach((person) => {
+        domString +=        `<li class="list-group-item">${person.name}</li>`;
+    })
+    domString +=        '</ul>';
+    domString +=    '</div>';
     ultilities.printToDom("tank", domString);
 }
 
 export default { tankBuilder };
+
+
+
+
+
+    
+
