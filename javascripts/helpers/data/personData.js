@@ -90,11 +90,6 @@ const persons = [
         isDead: false
     },
     {
-        id: 'person18',
-        name: 'Michele Rawlins',
-        isDead: false
-    },
-    {
         id: 'person19',
         name: 'Monique',
         isDead: false
@@ -131,6 +126,16 @@ const persons = [
     }
 ];
 
+const randomMurder = () => {
+    const livePeople = getLivePersons();
+    if (livePeople.length > 0) {
+        const randomNum = Math.floor(Math.random() * livePeople.length);
+        const deadPersonsId = livePeople[randomNum].id;
+        const deadManIndex = persons.findIndex((person) => person.id === deadPersonsId);
+        persons[deadManIndex].isDead = true;
+    }
+}
+
 const getLivePersons = () => {
     return persons.filter((person) => person.isDead === false);
 }
@@ -139,4 +144,4 @@ const getDeadPersons = () => {
     return persons.filter((person) => person.isDead);
 }
 
-export default { getLivePersons, getDeadPersons };
+export default { getLivePersons, getDeadPersons, randomMurder };

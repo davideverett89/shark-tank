@@ -3,7 +3,8 @@ import ultilities from '../helpers/ultilities.js';
 
 const buildGraveyard = () => {
     const persons = personData.getDeadPersons();
-    let domString = "";
+    let domString = '<h2 class="text-center">Graveyard</h2>';
+    domString += '<div class="d-flex flex-wrap">';
     persons.forEach((person) => {
         domString += '<div class="col-4 person-card">'
         domString +=    '<div class="card text-center">';
@@ -13,6 +14,7 @@ const buildGraveyard = () => {
         domString +=    '</div>';
         domString += '</div>';
     })
+    domString += '</div>';
     ultilities.printToDom("graveyard", domString);
 }
 
