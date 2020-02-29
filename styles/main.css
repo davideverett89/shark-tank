@@ -2,6 +2,6 @@ body {
     background-color: aliceblue;
 }
 
-.my-card:hover {
-    filter: brightness(110%);
-}
+ .person-card {
+     margin: 5px 0;
+ }
